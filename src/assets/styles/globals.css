@@ -1,0 +1,69 @@
+html {
+  padding: 0;
+  margin: 0;
+  font-size: 16px;
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Ubuntu", "Roboto",
+    "Oxygen", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  height: auto;
+  -webkit-tap-highlight-color: transparent;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+p {
+  margin: 0 !important;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+.skeleton {
+  background-color: #f0f0f0; /* define the background color of the skeleton */
+  overflow: hidden; /* hide overflow so that the animation stays within the container */
+  position: relative; /* set position property to relative to position pseudo-elements */
+}
+
+.skeleton::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%; /* start the animation from left to outside of the container */
+  width: 100%; /* set width to 100% to ensure it covers the container width */
+  height: 100%; /* set height to 100% to ensure it covers the container height */
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0.1) 0%,
+    /* customize the gradient to match your design */ rgba(255, 255, 255, 0.8)
+      50%,
+    /* customize the gradient to match your design */ rgba(255, 255, 255, 0.1)
+      100% /* customize the gradient to match your design */
+  );
+  animation: skeletonFlow 1s infinite; /* adjust the animation duration as needed */
+}
+
+@keyframes skeletonFlow {
+  0% {
+    left: -100%; /* start position of the pseudo-element */
+  }
+  100% {
+    left: 100%; /* end position of the pseudo-element */
+  }
+}

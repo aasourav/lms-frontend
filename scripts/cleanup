@@ -1,0 +1,2 @@
+#!/bin/bash -xe
+rm -rf /home/ubuntu/engaze-user

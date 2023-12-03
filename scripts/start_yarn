@@ -1,0 +1,7 @@
+#!/bin/bash
+
+cd /home/ubuntu/engaze-user
+pm2 stop engaze-user-prod
+pm2 del engaze-user-prod
+pm2 start yarn --interpreter bash --name engaze-user-prod -- start
+pm2 save
