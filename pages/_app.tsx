@@ -10,6 +10,7 @@ import NextNProgress from "nextjs-progressbar";
 import { antdThemeConfig } from "../src/assets/styles/antd-theme";
 import { theme } from "../src/assets/styles/theme";
 import { ThemeProvider } from "styled-components";
+import AuthContextProvider from "../src/context/AuthContext";
 
 function MyApp({ Component, pageProps }: AppProps) {
   useEffect(() => {
@@ -28,7 +29,9 @@ function MyApp({ Component, pageProps }: AppProps) {
           height={3}
           showOnShallow={false}
         />
-        <Component {...pageProps} />
+        <AuthContextProvider isAuthenticated={false} user={null}>
+          <Component {...pageProps} />
+        </AuthContextProvider>
       </ThemeProvider>
     </ConfigProvider>
   );
