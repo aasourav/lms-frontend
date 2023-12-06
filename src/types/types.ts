@@ -15,9 +15,18 @@ export interface ILogin {
 export interface IUserData {
   _id: string;
   name: string;
-  username: string;
-  avatar: string;
-  phoneNumber: string;
   email: string;
+  isVerified: boolean;
   role: TUSER_ROLES;
+}
+
+export interface ISignUp {
+  name: string;
+  email: string;
+  password: string;
+}
+
+export interface IActivationUser {
+  activationCode: string;
+  activationToken: string;
 }
