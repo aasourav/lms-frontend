@@ -7,6 +7,7 @@ import { notification } from "antd";
 interface IAuthContextProps {
   isAuthenticated: boolean;
   authUser: IUserData | null;
+  setAuthentication: (isAuth: boolean, authUser: IUserData) => void;
   logoutUser: () => Promise<void>;
   loginUserAction: (loginInfo: ILogin) => Promise<void>;
 }
@@ -66,6 +67,7 @@ const AuthContextProvider: React.FC<{
       value={{
         authUser,
         isAuthenticated: authenticated,
+        setAuthentication,
         loginUserAction,
         logoutUser,
       }}
